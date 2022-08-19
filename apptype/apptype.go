@@ -10,17 +10,17 @@ import (
 type BrushType = int
 
 type PixelCanvasConfig struct {
-	drawingArea              fyne.Size
-	canvasOffset             fyne.Position
+	drawingArea             fyne.Size
+	canvasOffset            fyne.Position
 	pixelRows, pixelColumns int
-	pixelSize                int
+	pixelSize               int
 }
 
 // Struct that stors infos about the state of the program
 type State struct {
-	brushColor     color.Color
+	BrushColor     color.Color
 	brushType      int
-	swatchSelected int
+	SwatchSelected int
 	filePath       string
 }
 
