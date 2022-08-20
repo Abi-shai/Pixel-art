@@ -32,7 +32,7 @@ func (renderer *SwatchRenderer) Refresh() {
 	// When the parent is selected change some strokes values
 	if renderer.parent.Selected {
 		renderer.square.StrokeWidth = 3
-		renderer.square.StrokeColor = color.NRGBA{255, 255, 255, 255}
+		renderer.square.StrokeColor = color.NRGBA{102, 102, 102, 102}
 		renderer.objects[0] = &renderer.square
 	} else {
 		renderer.square.StrokeWidth = 0
