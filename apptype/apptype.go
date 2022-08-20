@@ -10,20 +10,20 @@ import (
 type BrushType = int
 
 type PixelCanvasConfig struct {
-	drawingArea             fyne.Size
-	canvasOffset            fyne.Position
-	pixelRows, pixelColumns int
-	pixelSize               int
+	DrawingArea             fyne.Size
+	CanvasOffset            fyne.Position
+	PixelRows, pixelColumns int
+	PixelSize               int
 }
 
 // Struct that stors infos about the state of the program
 type State struct {
 	BrushColor     color.Color
-	brushType      int
+	BrushType      int
 	SwatchSelected int
-	filePath       string
+	FilePath       string
 }
 
 func (state *State) seFilePath(path string) {
-	state.filePath = path
+	state.FilePath = path
 }

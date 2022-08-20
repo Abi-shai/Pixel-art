@@ -4,7 +4,7 @@ package swatch
 import "fyne.io/fyne/v2/driver/desktop"
 
 func (swatch *Swatch) MouseDown(event *desktop.MouseEvent) {
-	swatch.clickHandler(swatch)
+	swatch.ClickHandler(swatch)
 	swatch.Selected = true
 	swatch.Refresh()
 }

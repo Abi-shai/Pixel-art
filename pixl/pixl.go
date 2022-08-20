@@ -16,16 +16,18 @@ func main() {
 
 	state := apptype.State{
 		color.NRGBA{255, 255, 255, 255},
-		SwatchSelected: 0,
+		1,
+		0,
+		"lalala",
 	}
 
 	appInit := ui.AppInit{
-		pixelWindow: pixelWindow,
-		state:       &state,
-		make([]*swatch.Swatch, 0, 64),
+		PixelWindow: pixelWindow,
+		State:       &state,
+		Swatches:    make([]*swatch.Swatch, 0, 64),
 	}
 
 	ui.Setup(&appInit)
 
-	appInit.pixelWindow.ShowAndRun()
+	appInit.PixelWindow.ShowAndRun()
 }

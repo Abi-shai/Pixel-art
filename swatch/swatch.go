@@ -15,7 +15,7 @@ type Swatch struct {
 	Selected     bool
 	Color        color.Color
 	SwatchIndex  int
-	clickHandler func(swatch *Swatch)
+	ClickHandler func(swatch *Swatch)
 }
 
 func (swatch *Swatch) SetColor(color color.Color) {
@@ -30,7 +30,7 @@ func NewSwatch(state *apptype.State, color color.Color, swatchIndex int, clickHa
 	swatch := &Swatch{
 		Selected:     false,
 		Color:        color,
-		clickHandler: clickHandler,
+		ClickHandler: clickHandler,
 		SwatchIndex:  swatchIndex,
 	}
 	swatch.ExtendBaseWidget(swatch)
