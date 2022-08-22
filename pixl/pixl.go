@@ -6,6 +6,7 @@ import (
 	"pixl/swatch"
 	"pixl/ui"
 
+	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 )
 
@@ -20,6 +21,17 @@ func main() {
 		0,
 		"lalala",
 	}
+
+	pixelCanvasConfig := apptype.PixelCanvasConfig{
+		// On screen size of the entire drawing area
+		DrawingArea:  fyne.NewSize(600, 600),
+		CanvasOffset: fyne.NewPos(0, 0),
+		PixelRows:    10,
+		PixelColumns: 10,
+		PixelSize:    30,
+	}
+
+	pixelCanvas := pixelCanvas.NewPixelCanvas()
 
 	appInit := ui.AppInit{
 		PixelWindow: pixelWindow,

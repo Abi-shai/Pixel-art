@@ -6,6 +6,7 @@ import (
 	"pixl/apptype"
 
 	"fyne.io/fyne"
+	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/widget"
 )
 
@@ -68,4 +69,27 @@ func NewPixelCanvas(state *apptype.State, config apptype.PixelCanvasConfig) *Pix
 	pixelCanvas.ExtendBaseWidget(pixelCanvas)
 
 	return pixelCanvas
+}
+
+// Creating the renderer widget
+func (pixelCanvas *PixelCanvas) CreateRenderer() fyne.WidgetRenderer {
+	canvasImage := canvas.NewImageFromImage(pixelCanvas.PixelData)
+	canvasImage.ScaleMode = canvas.ImageScalePixels
+	canvasImage.FillMode = canvas.ImageFillContain
+
+	canvasBorder := make([]canvas.Line, 4)
+	for i := 0; i < len(canvasBorder); i++ {
+		canvasBorder[i].StrokeColor = color.NRGBA{100, 100, 100, 255}
+		canvasBorder[i].StrokeWidth = 2
+	}
+
+	renderer := &PixelCanvasRenderer{
+		pixelCanvas:  pixelCanvas,
+		canvasImage:  canvasImage,
+		canvasBorder: canvasBorder,
+	}
+
+	pixelCanvas.renderer = renderer
+
+	return renderer
 }
