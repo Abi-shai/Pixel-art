@@ -1,2 +1,2 @@
 ## About
-A pixel maker executable, in the making for learning go, from the <a target="_blank" href="https://zerotomastery.io/">ztm<a/> academy.
+A pixel maker executable made with the <a target="_blank" href="https://fyne.io/">Fyne<a/> package toolkit, in the making for learning go, from the <a target="_blank" href="https://zerotomastery.io/">ztm<a/> academy.
